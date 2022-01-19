@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Librairie Le Toucan</title>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ultra" />
+ <link href='https://fonts.googleapis.com/css?family=Slabo 27px' rel='stylesheet'>
+ <link href='https://fonts.googleapis.com/css?family=Slabo 13px' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+
+<style>
+.reviewaut {
+text-align:left;
+}
+.mesetoiles1 {
+float:left;
+
+}
+.timeagoreview {
+font-family:'Slabo 13px',serif;
+color:#9c9c9c;
+float:left;
+padding-left:10px;
+width:45%;
+clear:right;
+text-align:left;
+
+}
+.reviewcontentcard {
+font-family:'Slabo 13px',serif;
+color:#000000;
+float:left;
+text-align:left;
+
+}
+.temoign {
+padding: 0 70px 0 70px;
+}
+.cards-temoign {
+}
+.cardheaderreview {
+
+padding:15px 0 30px 15px;
+margin:0 0 15px 0px;
+}
+.review {
+max-width:50%;
+margin:30px;
+
+display:block;
+}
+
+span.fa-star {
+font-size:18px;
+letter-spacing: 0px;
+
+}
+span.fa-star-o {
+font-size:18px;
+letter-spacing: 0px;
+color:#000000;
+
+}
+
+.unchecked {
+  color: #dbdbdb;
+}
+.checked {
+  color: #fad44b;
+}
+
+.action {
+font-family:'Slabo 13px',serif;
+text-decoration:underline;
+font-weight:800;
+   //text-decoration-line: underline;
+   text-underline-offset: 10px;
+
+padding:0 15px 0 15px;
+color: #83c38c;
+}
+.action:hover {
+color:#79876e;
+}
+#coordonnees,#galerie,#misesajour, #temoignagages {
+  scroll-margin-top: 80px;
+
+
+}
+.buttonspecial {
+width:revert;
+display:inline-block;
+
+}
+.map {
+width:80%;
+}
+.info1 {
+text-align:left;
+width:70%;
+font-family:'Slabo 13px',serif;
+font-weight:0;
+font-size:18px;
+color:#000000;
+}
+.info {
+margin-top:10px;
+text-align:left;
+width:70%;
+}
+.subtitle {
+font-family:'Slabo 13px',serif;
+color:#000000;
+width:70%;
+padding-top:30px;
+text-align:left;
+font-size:22px;
+font-weight:700;
+
+}
+.title {
+text-transform: uppercase;
+font-family:'Ultra',serif;
+color:#000000;
+padding-top:20px;
+}
+.parts {
+width:40px;
+height:1px;
+
+
+}
+section {
+
+position: relative;
+width:100%;
+margin-top:70px;
+text-align:center;
+}
+section > .separ {
+border-top:3px solid #000000;
+        right: 45%;
+        left: 45%;
+width:10%;
+margin:revert;
+}
+section > * {
+
+
+position:relative;
+width:100%;
+margin: 0 auto;
+}
+.contactus, .contactus:visited, .contactus:link {
+background-color: #83c38c;
+text-decoration:none;
+font-family:'Slabo 13px',serif;
+color:white;
+padding:20px 50px 20px 50px;
+
+}
+.contactus:hover {
+background-color: #79876e;
+text-decoration:none;
+font-family:'Slabo 13px',serif;
+color:white;
+padding:20px 50px 20px 50px;
+}
+h1 {
+font-family:'Ultra',serif;
+margin-top:revert;
+font-size:65px;
+}
+.libdescription {
+font-family:'Slabo 13px', serif;
+font-weight: 400;
+font-size:16px;
+color:#000000;
+
+
+
+}
+
+</style>
+
+
+<style>
+
+.sidebarentry {
+font-family:'Slabo 13px',serif;
+
+font-size: 18px;
+margin:5px 0 0 100px;
+}
+.sidenav > a:first-child {
+margin-top:20px;
+}
+html {
+//margin:0;
+//padding:0;
+
+}
+body {
+  font-family: "Ultra", serif;
+  color: #83c38c;
+//margin:0;
+//padding:0;
+
+}
+
+
+.sidenav {
+box-shadow: 2px 0px 2px #a19c9c;
+top:70px;
+  height: 100%;
+width:0;
+  display:block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.fermermenu, .fermermenu:hover, .fermermenu:visited {
+  font-size: 30px;
+  color: #79876e;
+
+
+  text-decoration: none;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 82px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #83c38c;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #79876e;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+body {
+height:1000px;
+margin:0;
+}
+nav {
+  z-index: 6;
+height:70px;
+box-shadow: 0px 2px 2px #a19c9c;
+top:0;
+position:fixed;
+width:100%;
+//clear:both;
+background-color:#ffffff;
+
+}
+#cnav {
+display:none;
+  text-decoration: none;
+  color: #83c38c;
+font-size:30px;
+}
+#onav {
+display:inline;
+width:40px;
+}
+ul#menu {
+text-align:center;
+margin-top:10px;
+
+}
+ul#menu li:not(.secondlist) {
+  display:inline;
+width:20%;
+line-height:30px;
+float:left;
+}
+ul#menu li a {
+  text-decoration: none;
+  color: #83c38c;
+text-align:center;
+}
+ul#menu li a:not(.secondlink):not(#cnav) {
+  text-decoration: none;
+  color: #83c38c;
+font-size:17px;
+
+font-family:'Slabo 13px',serif;
+}
+ul#menu li > a:hover {
+color:#79876e;
+  text-decoration: none;
+}
+.firstlist {
+width:40px;
+}
+.secondlist {
+font-size:20px;
+white-space: nowrap;
+
+text-overflow: ellipsis;
+  overflow: hidden;
+width:30px;
+box-sizing:revert;
+padding:0;
+margin:0;
+right:0;
+left:0;
+float:left;
+//padding-right:30px;
+
+}
+.secondlink {
+
+
+
+}
+main {
+text-align:center;
+position:relative;
+
+z-index:0;
+margin-top:150px;
+text-align:center;
+
+}
+</style>
+</head>
+<body>
+<div id="myModal5" class="modal inmodal fade" aria-hidden="true" role="dialog" tabindex="-1" style="display:none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="loading_svg mt-02 mb-02"><i class="fas fa-spinner fa-pulse fa-2x"></i></div>
+        </div>
+    </div>
+</div>
+
+<nav>
+ 
+
+
+<ul id="menu">
+  <li class="firstlist">
+   <span style="font-size:30px;cursor:pointer" id="onav" onclick="openNav()">&#9776; </span>
+  <a href="javascript:void(0)" class="closebtn fermermenu" id="cnav" onclick="closeMyNav()">&times;</a>
+   </li>
+  <li class="secondlist"><%=link_to "Librairie Le Toucan", root_path, class: "secondlink"%></li>
+  <li><%=link_to "Nous contacter", "#", class: "link2"%></li>
+  <li><%=link_to "Appeler maintenant", "#", class: "link2"%></li>
+  <li><%=link_to "Itinéraire", "#", class: "link2"%></li>
+</ul> 
+</nav>
+<div id="mySidenav" class="sidenav">
+
+  <a class="sidebarentry" onclick="closeNav(this);return false;" href="#misesajour">Mises à jour</a>
+  <a class="sidebarentry" onclick="closeNav(this);return false;" href="#temoignages">Témoignages</a>
+  <a class="sidebarentry" onclick="closeNav(this);return false;" href="#galerie">Galerie</a>
+  <a class="sidebarentry" onclick="closeNav(this);return false;" href="#coordonnees">Coordonnées</a>
+</div>
+<main>
+<%=yield%>
+</main>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "55%";
+onav.style.display='none';
+cnav.style.display='block';
+}
+function closeMyNav() {
+  document.getElementById("mySidenav").style.width = "0";
+
+onav.style.display='inline-block';
+cnav.style.display='none';
+
+}
+function closeNav(L) {
+  document.getElementById("mySidenav").style.width = "0";
+onav.style.display='inline-block';
+cnav.style.display='none';
+try {
+document.getElementById(L.href.replace('#','')).scrollIntoView();
+}
+catch(e) {
+console.log(e);
+}
+
+
+}
+
+</script>
+<%=yield :codejs%>
+   
+</body>
+</html> 

@@ -1,0 +1,27 @@
+  <div class="col">
+    <div class="card">
+
+<%=render partial: 'clients/clientreview', locals: {client: review.client}%>
+        <p class="card-text formfield mesetoiles1 timeagoreview">
+<%(1..5).each do |s|%>
+<span class="myreviewstars fa fa-star littlestar <%if s > review.note%>un<%end%>checked"></span>
+<%end%>
+<span class="card-text text-muted timeagoreview">Il y a <%=time_ago_in_words(review.created_at.to_time)%></span></p>
+
+      <div class="card-body">
+<p class="card-text contentreviewall">
+<%=review.content%>
+  <a href="#">Tout lire</a>
+
+</p><p class="card-text text-muted timeagoreview">
+<%if review.visitedthisyear%>
+<%= l review.visited, :format => :visitmonth %> 
+<%else%>
+<%= l review.visited, :format => :visitdate %> 
+<%end%>
+
+</p>
+      </div>
+    </div>
+  </div>
+

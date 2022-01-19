@@ -1,0 +1,37 @@
+<%= content_for :title do %>
+Connexion : comptes de libraire Librairie Le Toucan
+<%end%>  
+<%= content_for :css do %>
+.mycard {
+text-align:center;
+}
+<%end%>  
+
+<div class="card-body">
+    <h5 class="card-title mytitleinsc">Connexion</h5>
+    <h6 class="card-title mytitleinsc">Utilisez votre compte de libraire Librairie Le Toucan</h6>
+
+
+
+<%= form_for(resourcebookshopper, as: resourcebookshopper_name, url: bsloginpass_path) do |f| %>
+
+
+
+
+  <div class="form-floating other email2">
+
+
+    <%= f.email_field :telemail, class: "form-control", id:"email1", placeholder: 'telemail' %>
+<br />
+    <%= f.label :telemail %>
+  </div>
+
+  <div class="other actions inputsubmit">
+    <%= f.submit t(:next), class: 'btn btn-primary btncon' %>
+  </div>
+<% end %>
+  <div class="other">
+<%=link_to t(:sign_up), cnewsignup_path%>
+</div>
+
+

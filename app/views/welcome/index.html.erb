@@ -1,0 +1,67 @@
+<h1>Librairie Le Toucan</h1>
+
+
+<section class="">
+
+<p class="libdescription">Librairie à Saint Laurent Du Maroni</p>
+<p class="libdescription"><%=@msg%></p>
+</section>
+<section class="">
+<div class="separ"></div>
+<a class="contactus" href="">NOUS CONTACTER</a>
+</section>
+<section class="">
+<div class="separ"></div>
+<p class="title" id="misesajour">Mises à jour</p>
+</section>
+<section class="temoign">
+<div class="separ"></div>
+<p class="title" id="temoignages">Témoignages</p>
+<%Review.grouptwo.each do |x|%>
+<div class="card-group cards-temoign">
+<%=render x%>
+</div>
+<%end%>
+<%= link_to "REDIGER UN AVIS", writereview_path, class: "action" %>
+<%= link_to "EN SAVOIR PLUS", knowmore_path, class: "action" %>
+</section>
+<section class="">
+<div class="separ"></div>
+<p class="title" id="galerie">Galerie</p>
+</section>
+<section class="">
+<div></div>
+<p class="title">Nous contacter</p>
+<p class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.4383592014233!2d-54.03209258523425!3d5.50174209601051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d0ecb621fd42f45%3A0x8d5f2a48740a36d4!2sLibrairie%20Le%20Toucan!5e0!3m2!1sen!2sfr!4v1632498609201!5m2!1sen!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+<p class="subtitle" id="coordonnees">Coordonnées</p>
+<p class="info">
+<a class="buttonspecial contactus" href="">APPELER MAINTENANT</a>
+</p>
+<p class="info1">0594 34 48 68</p>
+<p class="subtitle">Adresse</p>
+<p class="info">
+<a class="buttonspecial contactus" href="">ITINÉRAIRE</a>
+</p>
+<p class="info1">5 rue schoelcher</p>
+<p class="info1">Saint Laurent Du Maroni 97320</p>
+<p class="info1">Guyane française</p>
+<p class="subtitle">Horaires d'ouverture</p>
+<p class="info1">lun.:	08:00 – 12:30, 16:00 – 19:00</p> 
+<p class="info1">mar.:	08:00 – 12:30, 16:00 – 19:00</p>
+<p class="info1">mer.:	08:00 – 12:30, 16:00 – 19:00</p>
+<p class="info1">jeu.:	08:00 – 12:30, 16:00 – 19:00</p>
+<p class="info1">ven.:	08:00 – 12:30, 16:00 – 19:00</p>
+<p class="info1">sam.:	08:00 – 12:30, 16:00 – 19:00</p>
+<p class="info1">dim.:	Fermé</p>
+</section>
+
+<div style="height:800px;"></div>
+<div id="moi"></div>
+
+<%=content_for :codejs do%>
+<script>
+function bsnewlogin(){
+$('#myModal5 .modal-content').load('<%=bsnewlogin_path%>',function(){$('#myModal5').modal('show');});
+}
+</script>
+<%end%>

@@ -1,0 +1,21 @@
+<div class="card review">
+    <div class="cardheaderreview">
+<div class="formfield mesetoiles1">
+<%(1..5).each do |s|%>
+<span class="myreviewstars fa fa-star <%if s > review.note%>un<%end%>checked"></span>
+<%end%>
+</div>
+      <p class="card-text text-muted timeagoreview">Il y a <%=time_ago_in_words(review.created_at.to_time)%></p>
+
+</div>
+
+
+    <div class="card-body">
+      <p class="card-text reviewcontentcard">« <%=review.content%> »</p>
+
+    </div>
+    <div class="card-body">
+      <p class="card-text reviewaut">-<%=review.client.namewithinitial%></p>
+
+    </div>
+</div>

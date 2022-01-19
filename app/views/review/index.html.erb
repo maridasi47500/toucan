@@ -1,0 +1,63 @@
+<div class="contentModal corpscarte">    <div class=" titrecarte">
+                    <h5 class="col-xs-10 titlemodal">Librairie Le Toucan</h5>
+<%=link_to "Ecrire un avis", writereview_path, class:'btn btn-primary writereviewlink'%>
+<p class="adresseshop">5 Rue Victor Schoelcher, Saint-Laurent-du-Maroni, French Guiana</p>
+
+
+
+    </div>
+    <div class="allbody">
+    <div class="corpsmodal">
+<p class="nbreviewstotal"><%if @nbreviews > 0%>
+<span><%=@notemoy%></span>
+<span>
+<%(1..5).each do |s|%>
+<span class="fa fa-star <%if s > @notemoy.to_f%>un<%end%>checked"></span>
+<%end%>
+</span>
+
+<span><%=@nbreviews%> avis</span>
+<%end%></p>
+<div>
+<h5>Les gens ont souvent noté</h5>
+<%@note=['',t('note.1'),t('note.2'),t('note.3'),t('note.4'),t('note.5')]%>
+<input type="radio" name="peoplenote" onchange="peoplenote();return false;"   class="btn-check" id="btn-check-note-2" checked autocomplete="off">
+<label class="btn btn-outline-primary" for="btn-check-note-2">Tous</label>
+
+<input type="radio" name="peoplenote" onchange="peoplenote();return false;"  value='<%=@noteoften%>' class="btn-check" id="option2" autocomplete="off">
+<label class="btn btn-outline-primary" for="option2"><%=@note[@noteoften.to_f]%> <%=@noteoften%></label>
+
+
+</div>
+<div>
+<h5>Trier par</h5>
+<input type="radio" name="sortby" onchange="sortby();return false;" value="mostrelevant" class="btn-check" id="btn-check-2" checked autocomplete="off">
+<label class="btn btn-outline-primary" for="btn-check-2">Le plus pertinent</label>
+<input type="radio" name="sortby" onchange="sortby();return false;" value="newest" class="btn-check" id="btn-check-3" autocomplete="off">
+<label class="btn btn-outline-primary" for="btn-check-3">Le plus ancien</label>
+<input type="radio" name="sortby" onchange="sortby();return false;" value="highest" class="btn-check" id="btn-check-4" autocomplete="off">
+<label class="btn btn-outline-primary" for="btn-check-4">Le meilleur</label>
+<input type="radio" name="sortby" onchange="sortby();return false;" value="lowest" class="btn-check" id="btn-check-5" autocomplete="off">
+<label class="btn btn-outline-primary" for="btn-check-5">Le plus mal noté</label>
+
+
+
+</div>
+
+
+
+
+
+<div id="reviews" class="row row-cols-1 row-cols-md-2 g-4">
+<%=render partial: 'review/reviewlist', collection: @reviews, as: :review%>
+</div>
+</div>
+</div>
+
+  <div class="card-footer mysubmitbtn">
+<button type="button" id="close2" class="close" data-dismiss="modal" aria-hidden="true"><%=t(:cancelreview)%> <i class="far fa-times"></i></button>
+
+<button type="button" onclick="posteraction();return false;" id="close2" class="close" data-dismiss="modal" aria-hidden="true"><%=t(:postreview)%> <i class="far fa-times"></i></button>
+  </div>
+
+</div>

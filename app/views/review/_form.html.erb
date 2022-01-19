@@ -1,0 +1,32 @@
+<%=form_with model: Review.new, local: true do |form|%>
+<div class="formfield" id="mystars">
+<span onclick="fastar(1,note);return false;" class="mychildrenstars fa fa-star-o"></span>
+<span onclick="fastar(2,note);return false;" class="mychildrenstars fa fa-star-o"></span>
+<span onclick="fastar(3,note);return false;" class="mychildrenstars fa fa-star-o"></span>
+<span onclick="fastar(4,note);return false;" class="mychildrenstars fa fa-star-o"></span>
+<span onclick="fastar(5,note);return false;" class="mychildrenstars fa fa-star-o"></span>
+</div>
+  <div class="formfield form-floating myvisits">
+<%=form.text_area :content, class: "form-control contentreview", placeholder: 'content', id:"reviewcontent"%>
+<%=form.label :content%>
+</div>
+
+  <div class="formfield form-floating myvisits">
+
+
+<%=form.date_select :visited, {start_year: 2000, end_year: Date.today.year, order: [:month, :year]},class: "visitedshop form-control",id:"shopvisit"%>
+<br />
+    <%= form.label :visited %>
+  </div>
+<input type="hidden" name="note" id="note"/>
+<%=form.hidden_field :note, id:'note'%>
+<div id="addphoto" class="formfield" onclick="loadphotos(); return false;">
+<img src="/assets/photoapp.png"/>
+</div>
+<div class="gallery">
+</div>
+<%=form.hidden_field :client_id, value: current_client.id,id:"reviewclientid"%>
+
+
+<%= form.file_field :photos,onchange:"imagesPreview(this, 'div.gallery');", id: 'loadphoto', multiple: true%>
+<%end%>
