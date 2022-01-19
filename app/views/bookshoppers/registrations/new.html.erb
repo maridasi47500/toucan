@@ -1,0 +1,53 @@
+<%= content_for :title do %>
+Créer votre compte de libraire de la Librairie Le Toucan
+<%end%>  
+
+<div class="card-body">
+    <h5 class="card-title mytitleinsc">Créer votre compte libraire de la Librairie Le Toucan</h5>
+
+
+
+<%= form_for(resourcebookshopper, as: resourcebookshopper_name, url: createnewbookshopper_path) do |f| %>
+
+
+
+<div class="np1 form-floating">
+
+    <%= f.text_field :firstname, class: "form-control", placeholder: 'firstname' %>
+<br />
+    <%= f.label :firstname %>
+  </div>
+  <div class=" np2  form-floating">
+
+
+    <%= f.text_field :lastname, class: "form-control", placeholder: 'lastname' %>
+    <br />
+<%= f.label :lastname %>
+</div>
+
+
+  <div class="form-floating other email2">
+
+
+    <%= f.email_field :email, class: "form-control", id:"email1", placeholder: 'email' %>
+<br />
+    <%= f.label :email %>
+  </div>
+  <div class="np1 form-floating np">
+
+    <%= f.password_field :password, placeholder: 'password', class: "form-control" %><br />
+    <%= f.label :password %>
+  </div>
+
+  <div class="np2 form-floating">
+
+    <%= f.password_field :password_confirmation, placeholder: 'password_confirmation', class: "form-control" %>
+</br>
+    <%= f.label :password_confirmation %>
+  </div>
+
+  <div class="other actions inputsubmit">
+    <%= f.submit t(:sign_in), class: 'btn btn-primary btncon' %>
+  </div>
+<% end %>
+

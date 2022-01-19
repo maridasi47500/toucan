@@ -1,0 +1,35 @@
+<%= content_for :title do %>
+Connexion : comptes Librairie Le Toucan
+<%end%>  
+<%= content_for :css do %>
+.mycard {
+text-align:center;
+}
+<%end%>  
+
+<div class="card-body">
+    <h5 class="card-title mytitleinsc">Bienvenue</h5>
+    <h6 class="card-title mytitleinsc"><%=@client.email%></h6>
+
+
+
+<%= form_for(resourceclient, as: resourceclient_name, url: seconnecter_path) do |f| %>
+
+
+
+    <%= f.hidden_field :email, value: @client.email%>
+    <%= f.hidden_field :tel, value: @client.tel%>
+
+  <div class="form-floating other pass2">
+
+
+    <%= f.password_field :mypass, class: "form-control", id:"pass1", placeholder: 'mypass' %>
+<br />
+    <%= f.label :mypass %>
+  </div>
+
+  <div class="other actions inputsubmit">
+    <%= f.submit t(:sign_in), class: 'btn btn-primary btncon' %>
+  </div>
+<% end %>
+
